@@ -4,14 +4,22 @@ import { Text, View } from "react-native";
 
 export default function RootLayout() {
   const [fontsLoaded] = useFonts({
-    OutfitRegular: require("./../assets/fonts/Outfit-Regular.ttf"),
-    OutfitMedium: require("./../assets/fonts/Outfit-Medium.ttf"),
-    OutfitBold: require("./../assets/fonts/Outfit-Bold.ttf"),
+    OutfitRegular: require("../assets/fonts/Outfit-Regular.ttf"),
+    OutfitMedium: require("../assets/fonts/Outfit-Medium.ttf"),
+    OutfitBold: require("../assets/fonts/Outfit-Bold.ttf"),
   });
 
   if (!fontsLoaded) {
-    return <View><Text>Loading...</Text></View>;
+    return (
+      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+        <Text>Loading...</Text>
+      </View>
+    );
   }
 
-  return <Stack />;
+  return (
+    <Stack screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="index" />
+    </Stack>
+  );
 }
