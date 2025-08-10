@@ -10,6 +10,7 @@ import {
 import { useNavigation } from "@react-navigation/native";
 import { Colors } from "./../../../../constants/Colors";
 import { useRouter } from "expo-router";
+import Ionicons from '@expo/vector-icons/Ionicons';
 
 
 
@@ -43,6 +44,11 @@ export default function SignIn() {
 
   return (
     <View style={styles.container}>
+        <TouchableOpacity onPress={()=>router.back()}>
+            <Ionicons name="arrow-back-outline" size={24} color="black" />
+
+            </TouchableOpacity>
+
       <Text style={styles.title}>Let's Sign You In</Text>
 
       <Text style={styles.subtitle}>Welcome Back</Text>
@@ -104,6 +110,7 @@ const styles = StyleSheet.create({
   title: {
     fontFamily: "Outfit-Bold",
     fontSize: 30,
+    marginTop:15,
   },
   subtitle: {
     fontFamily: "Outfit",

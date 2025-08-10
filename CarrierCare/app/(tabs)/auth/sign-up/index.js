@@ -10,6 +10,7 @@ import {
 } from "react-native";
 import { Colors } from "./../../../../constants/Colors";
 import { useRouter } from "expo-router";
+import Ionicons from '@expo/vector-icons/Ionicons';
 
 export default function SignUp() {
   const navigation = useNavigation();
@@ -40,6 +41,12 @@ export default function SignUp() {
 
   return (
     <View style={styles.container}>
+
+      <TouchableOpacity onPress={()=>router.back()}>
+            <Ionicons name="arrow-back-outline" size={24} color="black" />
+
+            </TouchableOpacity>
+
       <Text style={styles.title}>Create New Account</Text>
 
       {/* Username */}
@@ -107,21 +114,22 @@ export default function SignUp() {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 25,
-    paddingTop: 50,
+    padding: 20,
+    paddingTop: 20,
     backgroundColor: Colors.white,
     height: "100%",
   },
   title: {
     fontFamily: "Outfit-Bold",
     fontSize: 30,
+    marginTop:10,
     color: Colors.primary,
   },
   inputGroup: {
-    marginTop: 30,
+    marginTop: 25,
   },
   label: {
-    fontFamily: "Outfit",
+    fontFamily:"Outfit-Bold",
     marginBottom: 8,
     fontSize: 16,
     color: Colors.primary,
